@@ -1,12 +1,12 @@
  import React ,{useState} from 'react'
  
  function Todo() {
-    const [task, setTask] = useState('')
-    const [list, setList]=useState([])
+    const [task, setTask] = useState('') //current text from input
+    const [list, setList]=useState([]) //array of all task
     
     const handelChange=(e)=>{
         e.preventDefault()
-        setList([...list, task])
+        setList([...list, task]) //addid the current task to the list
         setTask("")
     }
     const handelDelete=(id)=>{
@@ -36,6 +36,6 @@
         </div>
      </div>
    )
- }
+ } 
  
  export default Todo
