@@ -8,8 +8,10 @@ function App() {
     setList([...list,task])
     setTask('')
   }
-  const handelDelete=()=>{
-    
+  const handelDelete=(id)=>{
+    const update=[...list]
+    update.splice(id,1)
+    setList(update)
   }
 
   return (
@@ -21,8 +23,12 @@ function App() {
       </form>
       <div>
         {list.map((item,index)=>(
-          <p key={index}>{item}</p>
+          <div key={index}>
+          <p>{item}</p>
+          <button onClick={()=>handelDelete(index)}>-</button>
+          </div>
         ))}
+
       </div>
     </div>
   )
